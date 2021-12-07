@@ -2,11 +2,20 @@ const { Schema, model } = require("mongoose");
 
 const eventSchema = new Schema(
     {
-        title: String,
-        genre: String,//ENUM Comedia, Musical, Danza, Drama, Tragedia
-        director: String,
+        title: {
+            type: String,
+            required: true},
+        genre: {
+            type: String,
+            enum:['Comedia', 'Musical', 'Danza', 'Drama', 'Tragedia']
+        },
+        director: {
+            type: String,
+            required: true},
         duration: String,
-        theatre: String,
+        theatre: {
+            type: String,
+            required: true},
         location: {
             type: {
                 type: String,
@@ -19,7 +28,6 @@ const eventSchema = new Schema(
         imageUrl: String
     },
     {
-        
         timestamps: true,
     }
 );

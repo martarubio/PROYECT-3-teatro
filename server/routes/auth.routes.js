@@ -24,7 +24,6 @@ router.post("/signup", (req, res, next) => {
             return User.create({
                 username,
                 passwordHash: hashedPassword,
-                isAdmin,
                 email,
             });
         })
@@ -48,12 +47,12 @@ router.get("/login", (req, res) => res.render("auth/login"));
 
 router.post("/login", (req, res, next) => {
     console.log("SESSION =====> ", req.session);
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    if (email === "" || password === "") {
+    if (username === "" || password === "") {
         res.render("auth/login", {
             errorMessage:
-                "Por favor, introduzca email y contraseña para iniciar sesión.",
+                "Por favor, introduzca usuario y contraseña para iniciar sesión.",
         });
         return;
     }

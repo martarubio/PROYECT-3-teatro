@@ -8,7 +8,7 @@ class LoginPage extends Component {
 
         this.state = {
             username: "",
-            pwd: ""
+            password: ""
         }
 
         this.authService = new AuthService()
@@ -17,11 +17,11 @@ class LoginPage extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.authService.login(this.state.username, this.state.pwd)
+        this.authService.login(this.state.username, this.state.password)
             .then(response => {
                 this.props.storeUser(response.data)
 
-                this.props.history.push("/coaster-list")
+                this.props.history.push("/event-list")
 
             })
             .catch(err => console.log(err.response.data.message))
@@ -52,11 +52,11 @@ class LoginPage extends Component {
 
                                 <Form.Group className="mb-3" controlId="password">
                                     <Form.Label>Contraseña</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="pwd" type="password" placeholder="Password" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="password" type="password" placeholder="Password" />
                                 </Form.Group>
 
                                 <Button variant="primary" type="submit">
-                                    Submit
+                                    Enviar
                                 </Button>
                             </Form>
                         </Col>

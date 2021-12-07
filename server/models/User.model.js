@@ -9,19 +9,23 @@ const userSchema = new Schema(
     },
     password: String,
     name: String,
-    // isAdmin: Boolean,
-    role: 
+    roles: {
+      type: String,
+      enum: ['admin', 'moderator']
+    },
     email: {
       type: String,
       unique: true,
       required: true
     },
-    //todo
-    attended: [String, ref: "Event"],
+    events_attended: {
+      type: { type: Schema.Types.ObjectId, ref: "Event" }
+    },
   },
   {
     timestamps: true,
   }
+
 );
 
 const User = model("User", userSchema);
