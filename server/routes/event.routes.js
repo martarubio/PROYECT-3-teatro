@@ -20,7 +20,7 @@ router.get("/event/:id", (req, res) => {
 router.post("/newEvent", (req, res) => {
     const { title, genre, director, duration, theatre, location, days, time, price, imageUrl } = req.body
 
-    Event.create({title, genre, director, duration, theatre, location, days, time, price, imageUrl})
+    Event.create({ title, genre, director, duration, theatre, location, days, time, price, imageUrl })
         .then(newEvent => res.json(newEvent))
         .catch(err => res.json({ err, errMessage: "Problema creando Event" }))
 })

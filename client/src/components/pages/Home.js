@@ -7,10 +7,6 @@ const Home = () => {
         <Container>
             <h1>Bievenid@ al Teatro</h1>
             
-
-           
-
-            
         </Container>
     )
 }

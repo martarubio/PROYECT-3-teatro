@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import EventService from "../../../services/event.service";
+import EventService from "../../services/event.service";
+import EventList from "./EventList";
 
 class EventDetails extends Component {
     constructor() {
@@ -35,7 +36,7 @@ class EventDetails extends Component {
     }
 
     render() {
-        const { } = this.state
+        const {title, genre, director, duration, theatre, location, days, time, price, imageUrl} = this.state
 
         return (
             <Container>
@@ -49,13 +50,13 @@ class EventDetails extends Component {
                                 <p>{genre}</p>
                                 <hr />
                                 <br />
-                                <p>Director: {director}</p>
-                                <p>Duración: {duration}</p>
-                                <p>Teatro: {theatre}</p>
-                                <p>Situación: {location}</p>
-                                <p>Días: {days}</p>
-                                <p>Horario: {time}</p>
-                                <p>Precio: {price}</p>
+                                <p>Director:{director}</p>
+                                <p>Duración:{duration}</p>
+                                <p>Teatro:{theatre}</p>
+                                <p>Situación:{location}</p>
+                                <p>Días:{days}</p>
+                                <p>Horario:{time}</p>
+                                <p>Precio:{price}</p>
 
                             </div>
                         </article>
@@ -64,7 +65,7 @@ class EventDetails extends Component {
                         <img src={imageUrl} alt={title} ></img>
                     </Col>
                 </Row>
-            </Container >
+            </Container>
         )
     }
 }

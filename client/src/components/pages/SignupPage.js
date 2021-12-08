@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Form, Button, Row, Col } from 'react-bootstrap'
-import AuthService from '../../../services/auth.service'
+import AuthService from '../../services/auth.service'
 
 class SignupPage extends Component {
     constructor(props) {
