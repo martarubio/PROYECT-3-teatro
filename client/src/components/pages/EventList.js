@@ -1,41 +1,59 @@
-import React, { Component } from "react";
-import { Container } from 'react-bootstrap'
-import EventService from "../../services/event.service";
+import React, { Component } from 'react'
+import { Row, Col, Modal, Button } from 'react-bootstrap'
+import NewEventForm from './NewEventForm'
+import EventCard from './EventCard'
+// import EventService from '../../services/event.service'
 
 class EventList extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
-            events: []
+            showModal: false
         }
-
-        this.service = new EventService()
     }
 
-    componentDidMount() {
-        this.refreshEvents()
+    openModal = () => {
+        this.setState({
+            showModal: true
+        })
     }
 
-    refreshEvents = () => {
-        this.service.getAllEvents()
-            .then(response => {
-                const events = response.data
-
-                this.setState({ events: events })
-            })
-            .catch(err => console.log(err))
+    closeModal = () => {
+        this.setState({
+            showModal: false
+        })
     }
-
     render() {
-
         return (
-            <Container>
-                <h1>Listado de espectáculos</h1>
+            <div>
+                <Button onClick={this.openModal}>Crear un nuevo espectáculo</Button>
 
-                <EventList refreshEvents={this.refreshEvents} events={this.state.events} />
+                <Modal
+                    show={this.state.showModal}
+                    backdrop="static"
+                    onHide={this.closeModal}
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title>Nuevo Espectáculo</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <NewEventForm refreshEvents={this.props.refreshEvents} closeModal={this.closeModal} />
+                    </Modal.Body>
 
-            </Container>
+                </Modal>
+                <Row>
+                    {this.props.events.map(elm => {
+
+                        return (
+                            <Col key={elm._id}>
+                                <EventCard  {...elm} />
+                            </Col>
+                        )
+                    })
+                    }
+                </Row>
+            </div>
         )
     }
 }

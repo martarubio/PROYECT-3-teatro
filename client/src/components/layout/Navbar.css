@@ -1,11 +1,12 @@
-.flex-column {
+.flex-column, .me-auto {
+    /* display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: left; */
     background-color: rgb(131, 5, 5);
-    width: 150px;
+    /* width: 150px;
     margin-top: 100px;
     margin-left: 100px;
-    text-decoration-color: white;
+    text-decoration-color: white !important; */
    
 
 }

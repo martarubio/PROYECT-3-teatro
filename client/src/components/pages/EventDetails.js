@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import EventService from "../../services/event.service";
-import EventList from "./EventList";
+// import EventList from './EventList';
 
 class EventDetails extends Component {
     constructor() {

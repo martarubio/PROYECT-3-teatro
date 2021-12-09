@@ -3,12 +3,12 @@ import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import EventDetails from './pages/EventDetails';
-import EventList from './pages/EventList';
+import EventPage from './pages/EventPage';
 import Navbar from './layout/Navbar';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import AuthService from '../services/auth.service';
-import Footer from './layout/Footer'
+import Footer from './layout/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -41,16 +41,16 @@ class App extends Component {
         <main>
           <BrowserRouter>
             <Switch>
-              <Route path="/" exact render={() => <Home />} />
-              <Route path="/event-list" render={() => <EventList />} />
-              <Route path="/event/:id" render={(props) => <EventDetails {...props} />} />
+              <Route path="/" exact render={() =><Home/>} />
+              <Route path="/event-page" exact render={() =><EventPage/>} />
+              <Route path="/event/:id" render={(props) =><EventDetails {...props} />} />
 
               {this.state.loggedUser ?
-                <Redirect to="event-list" />
+                <Redirect to="event-page" />
                 :
                 <>
-                  <Route path="/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
-                  <Route path="/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
+                  <Route path="/signup" render={(props) =><SignupPage {...props} storeUser={this.storeUser} />} />
+                  <Route path="/login" render={(props) =><LoginPage {...props} storeUser={this.storeUser} />} />
                 </>
               }
             </Switch>

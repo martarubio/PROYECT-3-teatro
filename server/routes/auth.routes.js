@@ -1,86 +1,67 @@
-const { Router } = require("express");
-const router = new Router();
+const router = require("express").Router()
 const mongoose = require("mongoose");
 const bcryptjs = require("bcryptjs");
-const saltRounds = 10;
+const bcryptSalt = 10;
 const User = require("../models/User.model");
 
-router.get("/signup", (req, res) => res.render("auth/signup"));
-router.post("/signup", (req, res, next) => {
-    const {username, password, email} = req.body;
 
-    if (!username || !password || !email) {
-        res.render("auth/signup", {
-            errorMessage:
-                "Todos los campos son obligatorios. Por favor indique su nombre de usuario, contraseña e email.",
-        });
-        return;
-    }
+router.post('/signup', (req, res) => {
+    const {username, pwd} = req.body
 
-    bcryptjs
-        .genSalt(saltRounds)
-        .then((salt) => bcryptjs.hash(password, salt))
-        .then((hashedPassword) => {
-            return User.create({
-                username,
-                passwordHash: hashedPassword,
-                email,
-            });
-        })
-        .then((userFromDB) => {
-            res.redirect("/user-profile");
-        })
-        .catch((error) => {
-            if (error instanceof mongoose.Error.ValidationError) {
-                res.status(500).render("auth/signup", { errorMessage: error.message });
-            } else if (error.code === 11000) {
-                res.status(500).render("auth/signup", {
-                    errorMessage: "El nombre de usuario o el email ya existen.",
-                });
-            } else {
-                next(error);
+    User
+        .findOne({ username })
+        .then(user => {
+
+            if (user) {
+                res.status(400).json({ code: 400, message: 'El usuario ya existe' })
+                return
             }
-        });
-});
 
-router.get("/login", (req, res) => res.render("auth/login"));
+            const salt = bcrypt.genSaltSync(bcryptSalt)
+            const hashPass = bcrypt.hashSync(pwd, salt)
 
-router.post("/login", (req, res, next) => {
-    console.log("SESSION =====> ", req.session);
-    const { username, password } = req.body;
+            User
+                .create({ username, password: hashPass })
+                .then((user) => res.status(200).json(user))
+                .catch(err => res.status(500).json({ code: 500, message: 'DB error al crear usuario', err: err.message }))
+        })
+        .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', err: err.message }))
+})
 
-    if (username === "" || password === "") {
-        res.render("auth/login", {
-            errorMessage:
-                "Por favor, introduzca usuario y contraseña para iniciar sesión.",
-        });
-        return;
-    }
 
-    User.findOne({ email })
-        .then((user) => {
+router.post('/login', (req, res) => {
+
+    const { username, pwd } = req.body
+
+    User
+        .findOne({ username })
+        .then(user => {
+
             if (!user) {
-                res.render("auth/login", {
-                    errorMessage: "Usuario no registrado. Debe registrase para acceder.",
-                });
-                return;
-            } else if (bcryptjs.compareSync(password, user.passwordHash)) {
-                req.session.currentUser = user;
-                res.redirect("/user-profile");
-            } else {
-                res.render("auth/login", { errorMessage: "Contraseña incorrecta." });
+                res.status(401).json({ code: 401, message: 'Usuario no registrado' })
+                return
             }
+
+            if (bcrypt.compareSync(pwd, user.password) === false) {
+                res.status(401).json({ code: 401, message: 'Contraseña incorrecta' })
+                return
+            }
+
+            req.session.currentUser = user
+            console.log(req.session.currentUser)
+            res.json(req.session.currentUser)
         })
-        .catch((error) => next(error));
-});
+        .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', err }))
+})
 
-router.get("/user-profile", (req, res) => {
-    res.render("users/user-profile", { userInSession: req.session.currentUser });
-});
 
-router.post("/logout", (req, res) => {
-    req.session.destroy();
-    res.redirect("/");
-});
+router.get('/logout', (req, res) => {
+    console.log(req.session.currentUser)
+    req.session.destroy((err) => res.status(200).json({ code: 200, message: 'Cerrada sesión' }));
+})
 
-module.exports = router;
+router.get("/isloggedin", (req, res) => {
+    req.session.currentUser ? res.json(req.session.currentUser) : res.status(401).json({ code: 401, message: 'No autorizado' })
+})
+
+module.exports = router

@@ -5,6 +5,7 @@ class EventService {
         this.app = axios.create({
             baseURL: 'http://localhost5005/api/teatro'
         })
+        // withCredentials: true
     }
 
     getAllEvents = () => this.app.get("/allEvents")

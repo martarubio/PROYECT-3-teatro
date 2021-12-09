@@ -35,14 +35,13 @@ class SignupPage extends Component {
             <Container>
                 <Row>
                     <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Registro</h2>
+                        <h2>Entrar</h2>
 
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group className="mb-3" controlId="username">
                                 <Form.Label>Usuario</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.username} name="username" type="text" placeholder="Elige un nombre de usuario" />
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="password">
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="pwd" type="password" placeholder="Password" />

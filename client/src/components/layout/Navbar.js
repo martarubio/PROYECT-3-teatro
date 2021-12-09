@@ -3,6 +3,7 @@ import './Navbar.css'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import AuthService from '../../services/auth.service'
+// import Nav from 'react-bootstrap/Nav'
 
 const authService = new AuthService()
 
@@ -16,26 +17,28 @@ const Navigation = ({ loggedUser, storeUser }) => {
     }
 
     return (
-        <Container>
-            <Nav variant="tabs" defaultActiveKey="/home" className="flex-column">
-                <Nav.Item>
-                    <Nav.Link href="/home">Inicio</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/events">Cartelera</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-2">Histórico</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/login" eventKey="link-3">Registro</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-4">Contacto</Nav.Link>
-                </Nav.Item>
+        <Navbar bg="dark" variant="dark" className="flex-column">
+            <Container>
+                <Navbar.Brand href="#home">LOGO</Navbar.Brand>
+                <Nav className="me-auto">
 
-            </Nav>
-        </Container>
+                    <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+                    <Nav.Link as={Link} to="/event-page">Cartelera</Nav.Link>
+                    <Nav.Link as={Link} to="/">Histórico</Nav.Link>
+                    {loggedUser ?
+                        <Nav.Link as={"span"} onClick={logout}>Cerrar Sesión</Nav.Link>
+                        :
+                        <>
+                            <Nav.Link as={Link} to="/signup">Registro</Nav.Link>
+                            <Nav.Link as={Link} to="/login">Inicio Sesión</Nav.Link>
+
+
+                        </>
+                    }
+                </Nav>
+            </Container>
+        </Navbar>
+
 
     )
 }

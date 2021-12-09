@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
-import EventService from '../services/event.service'
+import EventService from '../../services/event.service'
 
 export default class NewEventForm extends Component {
     constructor(props) {
@@ -95,10 +95,12 @@ export default class NewEventForm extends Component {
                     <Form.Control onChange={this.handleInputChange} value={this.state.imageUrl} name="imageUrl" type="text" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" style={{ background: 'rgb(131, 5, 5)' }} >
+                    Crear
                 </Button>
             </Form>
         )
     }
 }
+
+

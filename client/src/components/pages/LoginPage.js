@@ -40,7 +40,7 @@ class LoginPage extends Component {
                     <Row>
 
                         <Col md={{ span: 4, offset: 4 }}>
-                            <h2>Registro</h2>
+                            <h2>Iniciar Sesión</h2>
 
                             <hr />
 
@@ -55,7 +55,7 @@ class LoginPage extends Component {
                                     <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="password" type="password" placeholder="Password" />
                                 </Form.Group>
 
-                                <Button variant="primary" type="submit">
+                                <Button variant="primary" type="submit" >
                                     Enviar
                                 </Button>
                             </Form>
