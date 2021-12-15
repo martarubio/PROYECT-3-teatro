@@ -6,5 +6,10 @@ h1 {
     margin-left: 60px;
 }
 .justify-content-around {
- font-family: 'Satisfy', cursive;
+    font-family: 'Satisfy', cursive;
+    margin-bottom: 30px;
+}
+
+.details_image {
+    width: 300px;
 }

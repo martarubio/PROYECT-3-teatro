@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Button, Nav } from "react-bootstrap";
+import {Container, Row, Col, Button, Nav } from "react-bootstrap";
 import EventService from "../../services/event.service";
 import './EventDetails.css'
 import { Link } from 'react-router-dom'
@@ -44,7 +44,6 @@ class EventDetails extends Component {
         return (
             <Container>
                 <center><h1>Detalles</h1></center>
-
                 <Row className="justify-content-around">
                     <Col md={6} style={{ overflow: "hidden" }}>
                         <article>
@@ -54,8 +53,9 @@ class EventDetails extends Component {
                                 <p>Director: {director}</p>
                                 <p>Duración: {duration}</p>
                                 <p>Teatro: {theatre}</p>
-                                <p>Situación: latitud {latitude} / longitud {longitude}</p><Nav.Link as={Link} to={`/event-map/${latitude}/${longitude}`}>
-                                    <center> <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }} >Plano</Button></center>
+                                {/* <p>Situación: latitud {latitude} / longitud {longitude}</p> */}
+                                <Nav.Link as={Link} to={`/event-map/${latitude}/${longitude}`}>
+                                     <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }} >Plano</Button>
                                 </Nav.Link>
                                 <p>Días: {days}</p>
                                 <p>Horario: {time}</p>
@@ -66,11 +66,10 @@ class EventDetails extends Component {
                                 <left><Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }}>Compra de entradas</Button></left>
                             </a>
 
-
                         </article>
                     </Col>
                     <Col md={4}>
-                        <img src={imageUrl} alt={title} ></img>
+                        <img className="details_image" src={imageUrl} alt={title} ></img>
                     </Col>
                 </Row >
             </Container >

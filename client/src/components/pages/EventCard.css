@@ -1,10 +1,26 @@
 .event-card img {
-    border-radius: 40%;
-    height: 30%;
-    margin-top: 30px;
+    border-radius: 5%;
+    height: 200px;
+    margin-top: 10px;
+    object-fit: cover;
+
+   
+}
+.event-card img:hover {
+filter: sepia(100%);
+
 }
 .event-card {
+    background-color: slateblue;
+    padding-left: 10px;
+    padding-right:10px;
+    border-radius: 5%;
     border-style: none;
     border-color: white;
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* font-family: 'Satisfy', cursive; */
+    box-shadow: 5px 5px 10px black
+ 
+
 }

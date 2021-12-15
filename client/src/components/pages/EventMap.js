@@ -21,11 +21,15 @@
 // })(MapContainer);
 
 import React, { Component } from "react"
-import { Map, Marker, GoogleApiWrapper, mapStyles } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper, mapStyles, Button } from 'google-maps-react';
+
+
 
 export class MapContainer extends Component {
     render() {
         return (
+            <>  
+            {/* <h3>{theatre}</h3>  */}
             <Map
                 google={this.props.google}
                 zoom={8}
@@ -43,9 +47,16 @@ export class MapContainer extends Component {
                     // position={{ lat: location.coords.latitude, lng: location.coords.longitude}}
                     position={{ lat: this.props.match.params.lat, lng: this.props.match.params.lng }}
 
-
                 />
             </Map>
+                {/* <div>
+                    <a href="https://www.ticketmaster.es">
+                        <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }}>Volver</Button>
+                    </a>
+
+                </div> */}
+
+            </>
         )
 
     }

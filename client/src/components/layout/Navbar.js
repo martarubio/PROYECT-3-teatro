@@ -19,7 +19,7 @@ const Navigation = ({ loggedUser, storeUser }) => {
         
         <Navbar className="flex-column">
             <Container>
-                <Navbar.Brand href="#home" style={{ background: 'rgb(131, 5, 5)'}} >LOGO</Navbar.Brand>
+                <Navbar.Brand href="#home" style={{ background: 'rgb(131, 5, 5)'}} >MadrizTeatro</Navbar.Brand>
                 <Nav className="me-auto" >
                     <Nav.Link as={Link} to="/" style={{color: 'white'}}>Inicio</Nav.Link>
                     <Nav.Link as={Link} to="/event-list" style={{ color: 'white' }} >Cartelera</Nav.Link>

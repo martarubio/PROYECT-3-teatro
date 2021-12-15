@@ -18,6 +18,8 @@ const EventCard = ({ _id, title, genre, director, duration, theatre, latitude, l
                 <Link to={`/event/${_id}`}>
                     <center> <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }} >Detalles</Button></center>
                 </Link>
+                
+
             </Card.Body>
         </Card>
     )
