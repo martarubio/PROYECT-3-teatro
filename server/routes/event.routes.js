@@ -18,7 +18,12 @@ router.get("/event/:id", (req, res) => {
 
 
 router.post("/newEvent", (req, res) => {
-    const { title, genre, director, duration, theatre, location, days, time, price, imageUrl } = req.body
+    let location = {
+        type: 'Point',
+        coordinates: [req.body.longitude, req.body.latitude]
+    }
+
+    const { title, genre, director, duration, theatre, days, time, price, imageUrl } = req.body
 
     Event.create({ title, genre, director, duration, theatre, location, days, time, price, imageUrl })
         .then(newEvent => res.json(newEvent))

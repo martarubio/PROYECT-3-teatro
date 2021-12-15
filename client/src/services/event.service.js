@@ -3,7 +3,7 @@ import axios from 'axios'
 class EventService {
     constructor() {
         this.app = axios.create({
-            baseURL: 'http://localhost5005/api/teatro'
+            baseURL: 'http://localhost:5005/api'
         })
         // withCredentials: true
     }

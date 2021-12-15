@@ -1,14 +1,19 @@
 import { Component } from 'react'
+// import { Wrapper, Status } from "@googlemaps/react-wrapper";
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
+
 import './App.css';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import EventDetails from './pages/EventDetails';
 import EventPage from './pages/EventPage';
 import Navbar from './layout/Navbar';
-import SignupPage from './pages/SignupPage';
+import SignupPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
+import HistoryPage from './pages/HistoryPage';
 import AuthService from '../services/auth.service';
 import Footer from './layout/Footer';
+import EventMap from './pages/EventMap';
 
 class App extends Component {
   constructor(props) {
@@ -39,22 +44,24 @@ class App extends Component {
         <Navbar storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
 
         <main>
-          <BrowserRouter>
-            <Switch>
-              <Route path="/" exact render={() =><Home/>} />
-              <Route path="/event-page" exact render={() =><EventPage/>} />
-              <Route path="/event/:id" render={(props) =><EventDetails {...props} />} />
+          <Switch>
+            <Route path="/" exact render={() => <Home />} />
+            <Route path="/event-list" render={() => <EventPage />} />
+            <Route path="/event/:id" render={(props) => <EventDetails {...props} />} />
+            <Route path="/history" render={() => <HistoryPage />} />
+            <Route path="/event-map/:lat/:lng" render={(props) => <EventMap {...props} />} />
 
-              {this.state.loggedUser ?
-                <Redirect to="event-page" />
-                :
-                <>
-                  <Route path="/signup" render={(props) =><SignupPage {...props} storeUser={this.storeUser} />} />
-                  <Route path="/login" render={(props) =><LoginPage {...props} storeUser={this.storeUser} />} />
-                </>
-              }
-            </Switch>
-          </BrowserRouter>
+
+            {this.state.loggedUser ?
+              <Redirect to="event-list" />
+              :
+              <>
+                <Route path="/signup" render={(props) => <SignupPage {...props} storeUser={this.storeUser} />} />
+                <Route path="/login" render={(props) => <LoginPage {...props} storeUser={this.storeUser} />} />
+              </>
+            }
+          </Switch>
+
         </main>
 
         <Footer />

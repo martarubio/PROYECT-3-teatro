@@ -1,0 +1,14 @@
+.history {
+text-decoration: none;
+display: inline-block;
+flex-direction: row;
+justify-content: space-between;
+margin: 70px;
+
+}
+.history img {
+border-radius: 30px;
+width: 30%;
+border-style: double;
+padding: 30px;
+}

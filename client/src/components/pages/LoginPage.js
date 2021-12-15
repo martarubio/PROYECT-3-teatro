@@ -40,22 +40,22 @@ class LoginPage extends Component {
                     <Row>
 
                         <Col md={{ span: 4, offset: 4 }}>
-                            <h2>Iniciar Sesión</h2>
+                            <h2>Inicio Sesión</h2>
 
                             <hr />
 
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group className="mb-3" controlId="username">
                                     <Form.Label>Usuario</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.username} name="username" type="text" placeholder="Elige un nombre de usuario" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.username} name="username" type="text" placeholder="Escribe tu nombre de usuario" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" controlId="password">
                                     <Form.Label>Contraseña</Form.Label>
-                                    <Form.Control onChange={this.handleInputChange} value={this.state.pwd} name="password" type="password" placeholder="Password" />
+                                    <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" placeholder="Escribe tu contraseña" />
                                 </Form.Group>
 
-                                <Button variant="primary" type="submit" >
+                                <Button variant="primary" type="submit" style={{ background:'rgb(131, 5, 5)' }} >
                                     Enviar
                                 </Button>
                             </Form>

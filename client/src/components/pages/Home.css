@@ -1,0 +1,12 @@
+ .carousel {
+  
+  width: 730px;
+  height: 500px;
+  margin: auto;
+  display: block;
+} 
+.carousel img {
+  width: 10%;
+  margin: auto;
+  
+}   

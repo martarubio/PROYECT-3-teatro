@@ -23,8 +23,8 @@ const eventSchema = new Schema(
             coordinates: [Number],
         },
         days: String,
-        time: Date,
-        price: Number,
+        time: String,
+        price: String,
         imageUrl: String
     },
     {

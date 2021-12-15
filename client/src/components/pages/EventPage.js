@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from 'react-bootstrap'
 import EventService from "../../services/event.service";
 import EventList from './EventList';
+import './EventPage.css'
 
 class EventPage extends Component {
     constructor() {
@@ -32,7 +33,7 @@ class EventPage extends Component {
 
         return (
             <Container>
-                <h1>Lista de Espectáculos</h1>
+                <center><h1>En cartel</h1></center>
 
                 <EventList refreshEvents={this.refreshEvents} events={this.state.events} />
 

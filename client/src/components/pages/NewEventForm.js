@@ -12,7 +12,8 @@ export default class NewEventForm extends Component {
             director: "",
             duration: "",
             theatre: "",
-            location: "",
+            latitud: "",
+            longitude: "",
             days: "",
             time: "",
             price: "",
@@ -47,7 +48,7 @@ export default class NewEventForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group className="mb-3" controlId="title">
                     <Form.Label>Título</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.title} name="title" type="text" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.title} name="title" type="text"/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="genre">
@@ -57,7 +58,7 @@ export default class NewEventForm extends Component {
 
                 <Form.Group className="mb-3" controlId="director">
                     <Form.Label>Director</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.director} name="director" type="text" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.director} name="director" type="text"/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="duration">
@@ -67,12 +68,13 @@ export default class NewEventForm extends Component {
 
                 <Form.Group className="mb-3" controlId="theatre">
                     <Form.Label>Teatro</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.theatre} name="theatre" type="text" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.theatre} name="theatre" type="text"/>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="location">
+                <Form.Group className="mb-3">
                     <Form.Label>Situación</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.location} name="location" type="text" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.latitud} controlId="latitude" name="latitude" type="text" placeholder="latitud" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.location} controlId="longitude" name="longitude" type="text" placeholder="longitud" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="days">
@@ -82,10 +84,10 @@ export default class NewEventForm extends Component {
 
                 <Form.Group className="mb-3" controlId="time">
                     <Form.Label>Horario</Form.Label>
-                    <Form.Control onChange={this.handleInputChange} value={this.state.time} name="time" type="date" />
+                    <Form.Control onChange={this.handleInputChange} value={this.state.time} name="time" type="text" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="time">
+                <Form.Group className="mb-3" controlId="price">
                     <Form.Label>Precio</Form.Label>
                     <Form.Control onChange={this.handleInputChange} value={this.state.price} name="price" type="number" />
                 </Form.Group>

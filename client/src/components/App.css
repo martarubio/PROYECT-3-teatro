@@ -1,6 +1,6 @@
-/* .App {
-  text-align: center;
-} */
+body{
+  font-family: 'Satisfy';
+} 
 
 .App-logo {
   height: 40vmin;
@@ -14,15 +14,16 @@
 }
 
 /* .App-header {
-  background-color: #282c34;
+  color: white; */
+  /* background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+  font-size: calc(10px + 2vmin); */
+  
+
 
 .App-link {
   color: #4d0404;

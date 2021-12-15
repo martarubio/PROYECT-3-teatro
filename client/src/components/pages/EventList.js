@@ -27,7 +27,7 @@ class EventList extends Component {
     render() {
         return (
             <div>
-                <Button onClick={this.openModal}>Crear un nuevo espectáculo</Button>
+                <Button onClick={this.openModal} style={{ background: 'rgb(131, 5, 5)' }} >Crear un nuevo espectáculo</Button>
 
                 <Modal
                     show={this.state.showModal}
@@ -47,7 +47,7 @@ class EventList extends Component {
 
                         return (
                             <Col key={elm._id}>
-                                <EventCard  {...elm} />
+                                <EventCard{...elm} />
                             </Col>
                         )
                     })

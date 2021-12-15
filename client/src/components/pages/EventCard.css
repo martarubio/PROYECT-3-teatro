@@ -1,0 +1,10 @@
+.event-card img {
+    border-radius: 40%;
+    height: 30%;
+    margin-top: 30px;
+}
+.event-card {
+    border-style: none;
+    border-color: white;
+    margin-top: 25px;
+}
