@@ -19,9 +19,15 @@ require("./config/session.config")(app)
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js
 const allRoutes = require("./routes");
-require("./routes")(app);
+
+const path = require('path')
+app.use(express.static(path.join(__dirname, "public")))
+
+require("./routes")(app) //RUTAS
+
+app.use((req, res) => res.sendFile(__dirname + "/public/index.html"));
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
-require("./error-handling")(app);
+// require("./error-handling")(app);
 
 module.exports = app;
