@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Container, Row, Col, Button, Nav } from "react-bootstrap";
+import { Container, Row, Col, Button, Nav } from "react-bootstrap";
 import EventService from "../../services/event.service";
 import './EventDetails.css'
 import { Link } from 'react-router-dom'
@@ -54,8 +54,8 @@ class EventDetails extends Component {
                                 <p>Duración: {duration}</p>
                                 <p>Teatro: {theatre}</p>
                                 {/* <p>Situación: latitud {latitude} / longitud {longitude}</p> */}
-                                <Nav.Link as={Link} to={`/event-map/${latitude}/${longitude}`}>
-                                     <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }} >Plano</Button>
+                                <Nav.Link as={Link} to={`/event-map/${theatre}/${latitude}/${longitude}`}>
+                                    <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }} >Plano</Button>
                                 </Nav.Link>
                                 <p>Días: {days}</p>
                                 <p>Horario: {time}</p>

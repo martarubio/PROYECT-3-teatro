@@ -4,15 +4,22 @@
   height: 400px;
   margin: auto;
   display: block;
-  font-family: 'Satisfy', cursive;
+  
 } 
 .carousel img {
   height: 400px;
   margin: auto;
-}   
+} 
+.carousel h3 {
+  color: white;
+  font-weight: bold;
+  padding-bottom: 5px;
+}  
 
 .recomended {
 font-family:'Satisfy', cursive; 
+background: rgb(247,236,239);
+background: linear-gradient(90deg, rgba(247,236,239,1) 10%, rgba(232,205,207,0.9416141456582633) 50%, rgba(148,84,88,0.9920343137254902) 83%, rgba(176,101,101,1) 100%);
 }
 .recomended p {
   text-align: center;
@@ -23,6 +30,7 @@ width: 30%;
 display: blocK;
 margin: auto;
 padding-bottom: 60px;
+border-radius: 10px;
 }
 
 h1 {
@@ -32,7 +40,8 @@ text-align: center;
 padding-top: 80px;
 padding-bottom: 80px;
 }
-
-
+.body {
+  background-color: rosybrown;
+}
 
 

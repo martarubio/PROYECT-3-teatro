@@ -49,7 +49,7 @@ class App extends Component {
             <Route path="/event-list" render={() => <EventPage />} />
             <Route path="/event/:id" render={(props) => <EventDetails {...props} />} />
             <Route path="/history" render={() => <HistoryPage />} />
-            <Route path="/event-map/:lat/:lng" render={(props) => <EventMap {...props} />} />
+            <Route path="/event-map/:theatre/:lat/:lng" render={(props) => <EventMap {...props} />} />
 
 
             {this.state.loggedUser ?
