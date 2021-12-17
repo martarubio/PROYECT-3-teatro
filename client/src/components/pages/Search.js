@@ -1,6 +1,7 @@
 import React from "react";
 
 const SearchBar = (props) => (
+    
     <form action="/" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden" style={{ color: 'rgb(131, 5, 5)', fontWeight: 'bold' }}>Buscar espectáculo</span>

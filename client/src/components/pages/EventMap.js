@@ -8,7 +8,9 @@ const mapStyle = {
     width: "70%",
     height: "50vh",
     margin: "0 auto",
-    border: "1px solid black"
+    border: "3px solid rgb(83, 9, 9)",
+    borderRadius:'2%',
+    
 }
 
 export class MapContainer extends Component {
@@ -19,6 +21,12 @@ export class MapContainer extends Component {
             <>
                 <div className="EventMap">
                     <h3>{this.props.match.params.theatre}</h3>
+
+                       {/* <a href="/">
+                            <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }}>Volver</Button>
+                        </a> */}
+                    
+
                     <Map
                         className="map"
                         google={this.props.google}
@@ -41,11 +49,7 @@ export class MapContainer extends Component {
                         />
 
                     </Map>
-
-                    {/* <a href="https://www.ticketmaster.es">
-                        <Button variant="primary" style={{ background: 'rgb(131, 5, 5)' }}>Volver</Button>
-                    </a> */}
-
+                    
 
                 </div>
 
