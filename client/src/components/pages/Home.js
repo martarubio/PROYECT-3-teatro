@@ -12,7 +12,7 @@ const Home = () => {
             <Carousel className="carousel">
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/Teatro-EDP-Gran-Via_2255784417_7880358_1300x731.jpg"
                         alt="First slide" />
                     <Carousel.Caption>
@@ -21,7 +21,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/teatro la latina.jpg"
                         alt="Second slice" />
                     <Carousel.Caption>
@@ -30,7 +30,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/teatro principe gran via.png"
                         alt="Third slide" />
                     <Carousel.Caption>
@@ -39,7 +39,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/reapertura-TEATRO-COFIDIS-ALCAZAR-GRUPO-SMEDIA-MADRID.jpg"
                         alt="Fourth slide" />
                     <Carousel.Caption>
@@ -48,7 +48,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/teatro-español-madrid.jpeg"
                         alt="Fifth slide" />
                     <Carousel.Caption>
@@ -57,7 +57,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/teatro-maravillas.jpg"
                         alt="Sixth slide" />
                     <Carousel.Caption>
@@ -66,7 +66,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/teatro-real.jpeg"
                         alt="Seventh slide" />
                     <Carousel.Caption>
@@ -75,7 +75,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/Teatros_del_Canal.jpg"
                         alt="Eight slide" />
                     <Carousel.Caption>
@@ -84,7 +84,7 @@ const Home = () => {
                 </Carousel.Item>
 
                 <Carousel.Item>
-                    <img className="d-block w-100"
+                    <img className="d-block w-70"
                         src="images/matadero.jpg"
                         alt="Nineth slide" />
                     <Carousel.Caption>
@@ -93,7 +93,6 @@ const Home = () => {
                 </Carousel.Item>
 
             </Carousel>
-
 
             <div className="recomended">
                 <h1>RECOMENDADOS</h1>
@@ -105,7 +104,7 @@ const Home = () => {
                 <p>Dirección: Juan Mayorga</p>
                 <p>Intérprete: Blanca Portillo</p>
                 <div>
-                <img src="https://madridesteatro.com/wp-content/uploads/2021/08/SILENCIO-en-el-Teatro-Espanol-Madrid-Es-Teatro-2.jpeg" alt="silencio" />
+                    <img src="https://madridesteatro.com/wp-content/uploads/2021/08/SILENCIO-en-el-Teatro-Espanol-Madrid-Es-Teatro-2.jpeg" alt="silencio" />
                 </div>
 
 
@@ -113,9 +112,9 @@ const Home = () => {
 
 
             </div>
-            
-            
-            
+
+
+
             )
         </>
     )

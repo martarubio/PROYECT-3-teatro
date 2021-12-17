@@ -1,35 +1,40 @@
  .carousel {
-  
-  width: 530px;
-  height: 400px;
+  background-color: rgb(247,236,239);
+  background: linear-gradient(90deg, rgba(247,236,239,1) 10%, rgba(232,205,207,0.9416141456582633) 50%, rgba(148,84,88,0.9920343137254902) 83%, rgba(176,101,101,1) 100%);
+  height: 600px;
   margin: auto;
-  display: block;
-  
 } 
+
 .carousel img {
-  height: 400px;
-  margin: auto;
+ width: 70%;
+ height: 80vh;
+ object-fit: cover;
+  margin: auto;  
+  padding-top: 1%;
 } 
 .carousel h3 {
   color: white;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 }  
 
 .recomended {
-font-family:'Satisfy', cursive; 
+/* font-family:'Satisfy', cursive;  */
 background: rgb(247,236,239);
 background: linear-gradient(90deg, rgba(247,236,239,1) 10%, rgba(232,205,207,0.9416141456582633) 50%, rgba(148,84,88,0.9920343137254902) 83%, rgba(176,101,101,1) 100%);
+font-weight: bold;
 }
 .recomended p {
   text-align: center;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .recomended img{
-width: 30%;
+width: 20%;
 display: blocK;
 margin: auto;
-padding-bottom: 60px;
+padding-bottom: 40px;
 border-radius: 10px;
 }
 
@@ -37,8 +42,8 @@ h1 {
 color: whitesmoke;
 text-shadow: 1px 1px 2px black, 0 0 25px rgb(204, 40, 40), 0 0 8px rgb(83, 9, 9);
 text-align: center;
-padding-top: 80px;
-padding-bottom: 80px;
+padding-top: 30px;
+padding-bottom: 20px;
 }
 .body {
   background-color: rosybrown;

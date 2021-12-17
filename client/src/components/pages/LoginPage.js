@@ -44,7 +44,7 @@ class LoginPage extends Component {
                         <Row>
 
                             <Col md={{ span: 4, offset: 4 }}>
-                                <h2>Inicio Sesión</h2>
+                                <h3>Inicio Sesión</h3>
 
                                 <hr />
 

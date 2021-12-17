@@ -46,7 +46,7 @@ class SignupPage extends Component {
             <Container>
                 <Row>
                     <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Registro</h2><h6>(Rellena el formulario para crear una cuenta)</h6>
+                        <h3>Registro</h3>
 
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group className="mb-3" controlId="username">
