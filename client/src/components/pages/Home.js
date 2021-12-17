@@ -58,7 +58,7 @@ const Home = () => {
 
                 <Carousel.Item>
                     <img className="d-block w-100"
-                        src="images/teatro-maravillas_330x275.jpg"
+                        src="images/teatro-maravillas.jpg"
                         alt="Sixth slide" />
                     <Carousel.Caption>
                         <h3>Teatro Maravillas</h3>
@@ -83,6 +83,15 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
 
+                <Carousel.Item>
+                    <img className="d-block w-100"
+                        src="images/matadero.jpg"
+                        alt="Nineth slide" />
+                    <Carousel.Caption>
+                        <h3>Matadero</h3>
+                    </Carousel.Caption>
+                </Carousel.Item>
+
             </Carousel>
 
 
@@ -99,7 +108,15 @@ const Home = () => {
                 <img src="https://madridesteatro.com/wp-content/uploads/2021/08/SILENCIO-en-el-Teatro-Espanol-Madrid-Es-Teatro-2.jpeg" alt="silencio" />
                 </div>
 
-            </div>)
+
+
+
+
+            </div>
+            
+            
+            
+            )
         </>
     )
 

@@ -2,16 +2,19 @@ import React, { Component } from 'react'
 import { Row, Col, Modal, Button } from 'react-bootstrap'
 import NewEventForm from './NewEventForm'
 import EventCard from './EventCard'
-// import EventService from '../../services/event.service'
+import Search from './Search'
 
 class EventList extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            showModal: false
+            showModal: false,
+            filteredEvents: this.props.events
         }
     }
+
+
 
     openModal = () => {
         this.setState({
@@ -24,9 +27,23 @@ class EventList extends Component {
             showModal: false
         })
     }
+
+    filterEvents = (e) => {
+        const filtered = this.props.events.filter((event) => {
+            //compara en minusculas el titulo del evento con el texto de la searchbar en minusculas
+            return event.title.toLowerCase().includes(e.currentTarget.value.toLowerCase())
+        })
+        //actualiza la lista con la que pintamos
+        this.setState({ filteredEvents: filtered })
+    }
+
     render() {
         return (
+
+
             <div>
+                <Search filter={this.filterEvents} />
+
                 <Button onClick={this.openModal} style={{ background: 'rgb(131, 5, 5)' }} >Crear un nuevo espectáculo</Button>
 
                 <Modal
@@ -43,7 +60,7 @@ class EventList extends Component {
 
                 </Modal>
                 <Row>
-                    {this.props.events.map(elm => {
+                    {this.state.filteredEvents.map(elm => {
 
                         return (
                             <Col key={elm._id}>
@@ -54,6 +71,8 @@ class EventList extends Component {
                     }
                 </Row>
             </div>
+
+
         )
     }
 }

@@ -35,8 +35,7 @@ class EventPage extends Component {
             <Container>
                 <center><h1>En cartel</h1></center>
 
-                <EventList refreshEvents={this.refreshEvents} events={this.state.events} />
-
+                {this.state.events.length && <EventList refreshEvents={this.refreshEvents} events={this.state.events} />}
             </Container>
         )
     }

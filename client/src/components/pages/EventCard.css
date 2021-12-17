@@ -11,7 +11,7 @@ filter: sepia(100%);
 
 }
 .event-card {
-    background-color: slateblue;
+    background-color: rgb(211, 204, 204);
     padding-left: 10px;
     padding-right:10px;
     border-radius: 5%;
@@ -21,6 +21,7 @@ filter: sepia(100%);
     margin-bottom: 20px;
     /* font-family: 'Satisfy', cursive; */
     box-shadow: 5px 5px 10px black
+
  
 
 }

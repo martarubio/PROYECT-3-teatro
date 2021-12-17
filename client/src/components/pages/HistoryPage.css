@@ -1,14 +1,18 @@
 .history {
+/* display: flex; */
+justify-content: space-between;
 text-decoration: none;
 display: inline-block;
 flex-direction: row;
-justify-content: space-between;
-margin: 70px;
+background: rgb(247,236,239);
+background: linear-gradient(90deg, rgba(247,236,239,1) 10%, rgba(232,205,207,0.9416141456582633) 50%, rgba(148,84,88,0.9920343137254902) 83%, rgba(176,101,101,1) 100%);
+
 
 }
 .history img {
-border-radius: 30px;
-width: 30%;
-border-style: double;
-padding: 30px;
+
+width: 30%; 
+border-style: none;
+background-color: rgb(223, 221, 221);
+justify-content: space-between;
 }

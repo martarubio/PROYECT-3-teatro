@@ -14,6 +14,7 @@ import HistoryPage from './pages/HistoryPage';
 import AuthService from '../services/auth.service';
 import Footer from './layout/Footer';
 import EventMap from './pages/EventMap';
+import Search from './pages/Search';
 
 class App extends Component {
   constructor(props) {
