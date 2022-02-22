@@ -42,9 +42,9 @@ class EventList extends Component {
 
 
             <div>
-                <Search filter={this.filterEvents} />
+                
 
-                <Button onClick={this.openModal} style={{ background: 'rgb(131, 5, 5)' }} >Crear un nuevo espectáculo</Button>
+                <Button onClick={this.openModal} style={{ background: 'grey', marginTop: '0', paddingTop:'0'}} >Crear espectáculo</Button>
 
                 <Modal
                     show={this.state.showModal}
@@ -59,6 +59,8 @@ class EventList extends Component {
                     </Modal.Body>
 
                 </Modal>
+
+                <Search filter={this.filterEvents} />
                 <Row>
                     {this.state.filteredEvents.map(elm => {
 

@@ -7,9 +7,9 @@ import './HistoryPage.css'
 const History = () => {
     return (
 
-        <div className="history">
+        <div className= "history">
             <h2><center>Obras que estuvieron en cartel en Madrid y de gira por España</center></h2>
-            <div className=" cont-portadas">
+            <div className= "contportadas">
                 <img src="./images/lt_dalloway.jpg" alt="mrs.dallaway" />
                 <img src="./images/lt_mago.jpg" alt="elmago" />
                 <img src="./images/juan_tenorio.jpg" alt="donjuantenorio" />

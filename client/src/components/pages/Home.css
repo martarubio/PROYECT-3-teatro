@@ -4,13 +4,13 @@
   height: 600px;
   margin: auto;
 } 
-
 .carousel img {
- width: 70%;
- height: 80vh;
- object-fit: cover;
+  width: 70%;
+  height: 80vh;
+  object-fit: cover;
   margin: auto;  
   padding-top: 1%;
+  
 } 
 .carousel h3 {
   color: white;

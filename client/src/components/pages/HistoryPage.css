@@ -5,24 +5,23 @@ background-color: rgb(247,236,239);
 background: linear-gradient(90deg, rgba(247,236,239,1) 10%, rgba(232,205,207,0.9416141456582633) 50%, rgba(148,84,88,0.9920343137254902) 83%, rgba(176,101,101,1) 100%);
 
 }
-.history .cont-portadas  {
-    width: 100%;
-    display: flex;
+.history.contportadas  {
+    width: 30%;
+    display: inline-flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 5px;
-    gap: 5px;
-    margin: 0 auto;
-    padding-bottom: 50px;
+    justify-content: space-between;
+    position: relative;
+    grid-gap: 10px;
+    gap: 10px;
+    margin: 30px;
+    padding: 30px;
 }
 
-.history .cont-portadas img {
-
+/* .history.cont-portadas img {
+max-width: 110px;
 width: 30%;
 max-height: 265px; 
 border-style: none;
 background-color: rgb(223, 221, 221);
 
-}
+} */
